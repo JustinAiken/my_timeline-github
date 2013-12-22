@@ -1,0 +1,11 @@
+<h3> Github Settings </h3>
+<% if @user.settings(:github).user_name %>
+  <%= button_to "Scrape activities from #{@user.settings(:github).user_name}!", github_scrape_path, method: :get, class: "btn btn-primary" %>
+<% else %>
+  <%= form_tag new_github_path, method: :post do %>
+    <%= label_tag :user_name %>
+    <%= text_field_tag :user_name %>
+    <br>
+    <%= submit_tag "Save username", class: "btn btn-primary"  %>
+  <% end %>
+<% end %>
