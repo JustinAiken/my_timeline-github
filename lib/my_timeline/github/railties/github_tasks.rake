@@ -1,13 +1,22 @@
-namespace "my_timeline-twitter" do
-  namespace :install do
-    desc "Copy migrations from my_timeline-twitter to application"
-    task :migrations do
-      timestamp = Time.now.strftime("%Y%m%d%H%M%S")
+namespace "my_timeline-github" do
 
-      source    = File.expand_path "../../../../db/migrate//db/migrate/20131222224040_create_github_fork_events.rb", File.dirname(__FILE__)
-      dest      = File.expand_path "db/migrate/#{timestamp}_create_github_fork_events.my_timeline.rb"
-      puts "cp #{source} #{dest}"
-      `cp #{source} #{dest}`
+  def already_copied?(migration_file)
+    `ls db/migrate/*#{migration_file}.my_timeline.rb` != ""
+  end
+
+  def copy_migration(migration_file)
+    return if already_copied? migration_file
+    timestamp = Time.now.strftime("%Y%m%d%H%M%S")
+    source    = File.expand_path "../../../../db/migrate/#{migration_file}.rb", File.dirname(__FILE__)
+    dest      = File.expand_path "db/migrate/#{timestamp}_#{migration_file}.my_timeline.rb"
+    puts "cp #{source} #{dest}"
+    `cp #{source} #{dest}`
+  end
+
+  namespace :install do
+    desc "Copy migrations from my_timeline-github to application"
+    task :migrations do
+      copy_migration "create_github_fork_events"
     end
   end
 end
