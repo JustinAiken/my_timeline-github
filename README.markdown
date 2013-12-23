@@ -44,7 +44,7 @@ Github provides a wide variety of user activities.  This plugin will eventually 
 `[ ]` [IssuesEvent](http://developer.github.com/v3/activity/events/types/#issuesevent) <br>
 `[ ]` [MemberEvent](http://developer.github.com/v3/activity/events/types/#memberevent) <br>
 `[ ]` [PublicEvent](http://developer.github.com/v3/activity/events/types/#publicevent) <br>
-`[ ]` [PullRequestEvent](http://developer.github.com/v3/activity/events/types/#pullrequestevent) <br>
+`[X]` [PullRequestEvent](http://developer.github.com/v3/activity/events/types/#pullrequestevent) <br>
 `[ ]` [PullRequestReviewCommentEvent](http://developer.github.com/v3/activity/events/types/#pullrequestreviewcommentevent) <br>
 `[ ]` [PushEvent](http://developer.github.com/v3/activity/events/types/#pushevent) <br>
 `[ ]` [ReleaseEvent](http://developer.github.com/v3/activity/events/types/#releaseevent) <br>
