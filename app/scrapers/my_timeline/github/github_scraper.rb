@@ -9,7 +9,7 @@ module MyTimeline
       #   StatusEvent        TeamAddEvent     WatchEvent
 
       # IMPLEMENTED EVENTS ONLY:
-      VALID_EVENTS = %w{ForkEvent}.freeze
+      VALID_EVENTS = %w{ForkEvent PullRequestEvent}.freeze
 
       attr_accessor :user
 

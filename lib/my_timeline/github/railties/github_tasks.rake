@@ -17,6 +17,7 @@ namespace "my_timeline-github" do
     desc "Copy migrations from my_timeline-github to application"
     task :migrations do
       copy_migration "create_github_fork_events"
+      copy_migration "create_github_pull_request_events"
     end
   end
 end
