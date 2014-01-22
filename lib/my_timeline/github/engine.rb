@@ -14,8 +14,7 @@ module MyTimeline
       end
 
       config.after_initialize do |app|
-        MyTimeline.config_object.key :github, defaults: {user_token: nil}
-        MyTimeline.register_plugin :github
+        MyTimeline.register_plugin :github, defaults: {user_token: nil}
       end
 
       rake_tasks do

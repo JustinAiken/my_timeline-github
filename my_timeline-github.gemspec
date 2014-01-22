@@ -13,6 +13,6 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
   s.files       = `git ls-files`.split("\n")
 
-  s.add_runtime_dependency "my_timeline", '>= 0.0.4'
+  s.add_runtime_dependency "my_timeline", '>= 0.1.0'
   s.add_runtime_dependency "octokit"
 end
